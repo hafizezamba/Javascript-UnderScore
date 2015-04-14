@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1254" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="underscore-1.8.2.js"></script>
+    <script language="JavaScript" type="text/javascript">
+        "use strict";
+
+        $(document).ready(function(){
+
+            _.times(3,function (i){
+                $("body").append(i+ "<br>");
+            });
+
+            $("body").append("<br>");
+
+            var data = [
+                {name:"Ali",age:45},
+                {name:"veli",age:25}
+            ];
+
+            _.each(data ,function(item){
+                $("body").append(item.name + " " + item.age + "<br>");
+            })
+        });
+
+        //Örnekdeki "times" fonksiyonuna geçilen ilk parametre, döngünün dönüş adedini belirtir
+        //Buradaki sayı adedince fonksiyona ikinci parametre olarak geçilen fonksiyon çağırılır
+        //çağrılan fonksiyona parametre olarak da döngünün indeks değeri geçilir.for döngüsünün daha kompakt versiyonu.
+
+        //"each" fonksiyonunda ilk parametre, içerisinde dönülecek diziyi belirtir.
+        //Dizideki eleman adedince fonksiyona ikinci parametre olarak geçilen fonksiyon çağırılıyor ve
+        //parametre olarak da dizinin sıradaki elemanı geçilir.foreach döngüsünün daha kompakt versiyonu.
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1254" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="underscore.js"></script>
+    <script type="text/javascript" language="JavaScript">
+        "use strict";
+
+        $(document).ready(function () {
+
+            var data = [
+                { id: 1, name: "Ali", age: 45, gender: "Erkek" },
+                { id: 2, name: "Veli", age: 25, gender: "Erkek" },
+                { id: 3, name: "Ahmet", age: 45, gender: "Erkek" },
+                { id: 4, name: "Mehmet", age: 20, gender: "Erkek" },
+                { id: 5, name: "Ayse", age: 40, gender: "Kadin" },
+                { id: 6, name: "Fatma", age: 30, gender: "Kadin" }
+            ];
+
+            var list = _.filter(data, function (item) {
+                return item.gender == "Erkek" && item.age == 45;
+            });
+
+            $("body").append(JSON.stringify(list));
+
+            $("body").append("<br>");
+            $("body").append("<br>");
+
+            var user = _.find(data, function (item) {
+                return item.name == "Veli";
+            });
+
+            $("body").append(JSON.stringify(user));
+        });
+        //Diziden belirtilen kriterlere uygun kayıt (find) veya kayıtları (filter) çekmemize imkan sağlıyor. Ancak çok daha güçlü ve esnek bir biçimde
+        //Fonksiyonlarımıza geçilen ilk parametre ile üzerinde aramanın gerçekleştirileceği dizi bildiriliyor Dizinin her bir elemanı için ikinci parametre
+        //olarak geçilen fonksiyon çağırılıyor ve dizinin ilgili elemanı fonksiyona parametre olarak geçiliyor. Eğer fonksiyon içerisinden "true" değer dönerse,
+        //ilgili elemanı sonuca eklenmiş, "false" dönerse eklenmemiş olur.
+
+        //İkinci parametre olarak yazdığımız fonksiyon, standart bir JavaScript fonksiyonudur. Burada tek satırlık bir koşul eklendi ama
+        //isteseydik gidip dışarıdaki bir Web Service'e bağlanıp bir şeyler sorabilir yada veritabanından sorgu çekilebilirdi.
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1254" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="underscore.js"></script>
+    <script type="text/javascript" language="JavaScript">
+        "use strict";
+
+        $(document).ready(function(){
+
+            var data = [
+                {id:1,name:"Ali",age:45,gender:"Erkek"},
+                {id:2,name:"Veli",age:25,gender:"Erkek"},
+                {id:3,name:"Ahmet",age:45,gender:"Erkek"},
+                {id:4,name:"Mehmet",age:20,gender:"Erkek"},
+                {id:5,name:"Ayşe",age:40,gender:"Kadın"},
+                {id:6,name:"Fatma",age:30,gender:"Kadın"}
+            ];
+
+            var list1 = _.map(data,function(item){
+                return{userId:item.id,usename:item.name};
+            });
+
+            $("body").append(JSON.stringify(list1));
+
+            $("body").append("<br>");
+            $("body").append("<br>");
+
+            var list2= _.pluck(data,"name");
+
+            $("body").append(JSON.stringify(list2));
+
+            $("body").append("<br>");
+            $("body").append("<br>");
+
+            var list3 = _.pick(data[0],"name","gender");
+
+            $("body").append(JSON.stringify(list3));
+
+            $("body").append("<br>");
+            $("body").append("<br>");
+
+            var list4 = _.omit(data[0],"age");
+
+            $("body").append(JSON.stringify(list4));
+        });
+
+        //"map" fonksiyonuna ilk parametre olarak geçilen dizinin her bir elemanı ikinci parametre olarak geçilen fonksiyona parametre olarak geçiliyor.
+        //Daha sonra bu fonksiyonda döndüğümüz nesne şeklinde bir dizi oluşturuluyor. Böylece bir diziyi, ihtiyacımıza uygun yapıdaki başka bir diziye çevirebiliyoruz.
+
+        //"pluck" fonksiyonu, "map" fonksiyonunun özelleştirilmiş versiyonudur.Diziden, sadece belirtilen elemanlar alınarak bir dizi üretiyor.
+
+        //"pick" ve "omit" ise dizi yerine direk nesne üzerinde çalışıyor. "pick" ile nesnenin sadece belirtilen elemanlarını alarak yeni bir nesne üretiyoruz.
+        //"omit" ile tam tersi şekilde, belirtilen elemanların haricindeki elemanları alarak yeni bir nesne üretiliyor
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
