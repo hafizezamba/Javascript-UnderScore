@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1254" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="underscore.js"></script>
+    <script type="text/javascript" language="JavaScript">
+        "use strict";
+        //verilen değerlerin belli kriterlere uyup uymadığını kontrol ederek true veya false değer döner.
+
+        $(document).ready(function(){
+            var isEqual = _.isEqual({name:"Ali",age:45} , {name:"Ali",age:45});
+            var isEmpty = _.isEmpty({});
+            var isElement = _.isElement($("body")[0]);
+            var isArray = _.isArray([1,2]);
+            var isObject = _.isObject({name:"Ali",age:45});
+            var isArguments = _.isArguments({name:"Ali",age:45});
+            var isFunctions = _.isFunction(function(){alert("test");});
+            var isString = _.isString("Ali");
+            var isNumber = _.isNumber(45);
+            var isFinite = _.isFinite(Infinity);
+            var isBoolean = _.isBoolean(1 == 2);
+            var isDate = _.isDate(new Date());
+            var isRegExp = _.isRegExp(/tst/);
+            var isNan = _.isNaN(undefined);
+            var isNull = _. isNull(null);
+            var isUndefined = _.isUndefined(undefined);
+
+            $("body").append(isEqual.toString() + "<br>");
+            $("body").append(isEmpty.toString() + "<br>");
+            $("body").append(isElement.toString() + "<br>");
+            $("body").append(isObject.toString() + "<br>");
+            $("body").append(isArguments.toString() + "<br>");
+            $("body").append(isFunctions.toString() + "<br>");
+            $("body").append(isString.toString() + "<br>");
+            $("body").append(isNumber.toString() + "<br>");
+            $("body").append(isFinite.toString() + "<br>");
+            $("body").append(isBoolean.toString() + "<br>");
+            $("body").append(isDate.toString() + "<br>");
+            $("body").append(isRegExp.toString() + "<br>");
+            $("body").append(isNan.toString() + "<br>");
+            $("body").append(isNull.toString() + "<br>");
+            $("body").append(isUndefined.toString() + "<br>");
+
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
