@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1254" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="underscore.js"></script>
+    <script type="text/javascript" language="JavaScript">
+        "use strict";
+
+        $(document).ready(function() {
+            var data = [
+                {id: 1, name: "Ali", age: 45, gender: "Erkek"},
+                {id: 2, name: "Veli", age: 25, gender: "Erkek"},
+                {id: 3, name: "Ahmet", age: 45, gender: "Erkek"},
+                {id: 4, name: "Mehmet", age: 20, gender: "Erkek"},
+                {id: 5, name: "Ayse", age: 40, gender: "Kadin"},
+                {id: 6, name: "Fatma", age: 30, gender: "Kadin"}
+            ];
+
+            var isEveryRecordErkek = _.every(data,function(item){
+               return item.gender == "Erkek";
+            });
+
+            $("body").append(isEveryRecordErkek.toString());
+
+            $("body").append("<br>");
+            $("body").append("<br>");
+
+            var  isSomeRecordErkek = _.some(data,function(item){
+                return item.gender=="Erkek";
+            });
+            $("body").append(isSomeRecordErkek.toString());
+        });
+        //verilen dizideki tüm elemanların (every) veya en az bir elemanın (some) belirtilen kritere uyup uymamasına göre true veya false değer döndürür.
+        //ilk denemede, dizinin tüm elemanlarının "gender" özelliğinin "Erkek" olup olmadığı komtrol edildi
+        //İkinci denemede de en az bir adet "Erkek" olup olmadığı kontrol edildi.
+    </script>
+</head>
+<body>
+
+</body>
+</html>

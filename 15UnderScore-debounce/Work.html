@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1254" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="underscore.js"></script>
+    <script language="JavaScript" type="text/javascript">
+        "use strict";
+
+        $(document).ready(function(){
+           var writeTest = function(){
+               $("body").append("test");
+           } ;
+
+            var writeTestFn = _.debounce(writeTest,1000,true);          //1000 milisaniye içerisinde write test fonksiyonu sadece bir kez çağrıldı.
+
+            writeTestFn();
+            writeTestFn();
+            writeTestFn();
+            writeTestFn();
+        });
+
+        //Bununla normal bir fonksiyonun yerini temsil edecek bir  fonksiyon tanımlanır. Tanımlama sırasında da milisaniye cinsinden bir süre verilir.
+        //Tanımladığımız bu temsili fonksiyon, belirtilen süre içerisinde en fazla 1 kez çağırılabilir, süre dolana kadar takip eden diğer çağırımlar işletilmez.
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

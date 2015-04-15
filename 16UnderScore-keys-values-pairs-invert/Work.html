@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1254" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="underscore.js"></script>
+    <script language="JavaScript" type="text/javascript">
+        "use strict";
+
+        $(document).ready(function(){
+            var data={one:1,two:2,three:3};
+
+            var keys = _.keys(data);                                    //dizideki tüm key değerleri geri döndürüldü
+            $("body").append(JSON.stringify(keys));
+
+            $("body").append("<br>");
+            $("body").append("<br>");
+
+            var values = _.values(data);                                //dizideki tüm value değerleri geri döndürüldü
+            $("body").append(JSON.stringify(values));
+
+            $("body").append("<br>");
+            $("body").append("<br>");
+
+            var pairs = _.pairs(data);                                  //key ve value değerleri dizi türünde gruplandı
+            $("body").append(JSON.stringify(pairs));
+
+            $("body").append("<br>");
+            $("body").append("<br>");
+
+            var inverted = _.invert(data);                              //key ve value değerlerinin yerleri değiştirildi
+            $("body").append(JSON.stringify(inverted));
+        });
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

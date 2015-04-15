@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1254" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="underscore.js"></script>
+    <script language="JavaScript" type="text/javascript">
+        "use strict";
+        $(document).ready(function(){
+
+           var list= _.range(5,20,2);                   //5 den başlayarak 20'ye kadar 2 şer ikişer artan sayılar
+
+            $("body").append(JSON.stringify(list));
+        });
+        //range fonksiyonu belirtilen değerden başlayarak  belirtilen değere kadar ,belirtilen eadımda artan sayılardan oluşan bir dizi oluşturur
+    </script>
+</head>
+<body>
+
+</body>
+</html>
