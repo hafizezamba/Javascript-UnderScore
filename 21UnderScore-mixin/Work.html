@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1254" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="underscore.js"></script>
+    <script type="text/javascript" language="JavaScript">
+        "use strict";
+
+        $(document).ready(function(){
+
+            _.mixin({
+                pascalCase:function(text){                                                         //mixin fonksiyonu ile underscore pascalCase adında bir fonksiyon eklendi.
+                    return text.charAt(0).toUpperCase() + text.substring(1).toLowerCase();         //Fonksiyona verilen string ifadenin ilk harfi Büyük diğer harfleri ise küçük yazıldı
+                }
+            });
+
+            var test = _.pascalCase("deneme");                                                      //pascalCase fonksiyonuna parametre geçildi ve fonksiyon içerisinde belirtilen işlemler uygulandı.
+
+            $("body").append(test);
+
+        });
+
+        //underScore kendimiz fonksiyon eklemek istediğimizde bu function ı kullanırız.yazdığımız fonksiyona ihtiyaç duyduğumuzda _ ile çağırırız.
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

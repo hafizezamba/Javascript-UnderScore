@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1254" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="underscore.js"></script>
+    <script type="text/javascript" language="JavaScript">
+        "use strict";
+
+        $(document).ready(function() {
+            var data1 = {id:1,name:"Ali"};                                          //1. nesne oluşturuldu id ve name özlliği eklendi
+            var data2 = {name:"Veli",age:45,gender:"Erkek"};                        //2. nesne oluşturuldu name,age ve gender özelliği eklendi
+            var data3 = {id:1,name:"Ali"};                                          //3. nesne oluşturuldu id ve name özelliği eklendi
+
+            _.extend(data1,data2);                                                  //data1 de bulunan özellikler data2 ye eklendi.data2 deki özellikler korunur,kesişen özelliklerin değeri üzerine yazıldı.
+
+            $("body").append(JSON.stringify(data1));                                //data1 json objesi stringe dönüştürülerek yazdırıldı.
+
+            $("body").append("<br>");
+            $("body").append("<br>");
+
+            _.defaults(data3,data2);                                                //data3 de bulunan özellikler data2 ye eklendi.mevcut değerler korundu sadece olmayan özellikler nesneye eklendi
+
+            $("body").append(JSON.stringify(data3));                                //data3 json objesi stringe dönüştürülerek yazdırıldı.
+        });
+
+        </script>
+</head>
+<body>
+
+</body>
+</html>
